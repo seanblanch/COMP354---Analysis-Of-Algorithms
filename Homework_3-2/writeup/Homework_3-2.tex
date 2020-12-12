@@ -1,0 +1,829 @@
+%
+% 354 Homework 3-2
+%
+\documentclass[12pt,twoside]{article}
+
+\input{macros}
+\renewcommand{\name}{YOUR NAME HERE}
+
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage[all]{xy}
+\usepackage[ruled,lined,noend,linesnumbered]{algorithm2e}
+\SetKwIF{If}{ElseIf}{Else}{if}{}{else if}{else}{}%
+
+\newcommand{\answer}{
+ \par\medskip
+ \textbf{Answer:}
+}
+
+\newcommand{\collaborators}{ \textbf{Collaborators:}
+%%% COLLABORATORS START %%%
+None.
+%%% COLLABORATORS END %%%
+}
+
+\newcommand{\answerIa}{ \answer
+%%% PROBLEM 1(a) ANSWER START %%%
+0
+%%% PROBLEM 1(a) ANSWER END %%%
+}
+
+\newcommand{\answerIb}{ \answer
+%%% PROBLEM 1(b) ANSWER START %%%
+0
+%%% PROBLEM 1(b) ANSWER END %%%
+}
+
+\newcommand{\answerIc}{ \answer
+%%% PROBLEM 1(c) ANSWER START %%%
+0
+%%% PROBLEM 1(c) ANSWER END %%%
+}
+
+\newcommand{\answerId}{ \answer
+%%% PROBLEM 1(d) ANSWER START %%%
+0
+%%% PROBLEM 1(d) ANSWER END %%%
+}
+\newcommand{\answerIe}{ \answer
+%%% PROBLEM 1(e) ANSWER START %%%
+0
+%%% PROBLEM 1(e) ANSWER END %%%
+}
+\newcommand{\answerIf}{ \answer
+%%% PROBLEM 1(f) ANSWER START %%%
+0
+%%% PROBLEM 1(f) ANSWER END %%%
+}
+\newcommand{\answerIg}{ \answer
+%%% PROBLEM 1(g) ANSWER START %%%
+0
+%%% PROBLEM 1(g) ANSWER END %%%
+}
+\newcommand{\answerIh}{ \answer
+%%% PROBLEM 1(h) ANSWER START %%%
+0
+%%% PROBLEM 1(h) ANSWER END %%%
+}
+\newcommand{\answerIi}{ \answer
+%%% PROBLEM 1(i) ANSWER START %%%
+0
+%%% PROBLEM 1(i) ANSWER END %%%
+}
+\newcommand{\answerIj}{ \answer
+%%% PROBLEM 1(j) ANSWER START %%%
+0
+%%% PROBLEM 1(j) ANSWER END %%%
+}
+\newcommand{\answerIk}{ \answer
+%%% PROBLEM 1(k) ANSWER START %%%
+0
+%%% PROBLEM 1(k) ANSWER END %%%
+}
+\newcommand{\answerIl}{ \answer
+%%% PROBLEM 1(l) ANSWER START %%%
+0
+%%% PROBLEM 1(l) ANSWER END %%%
+}
+\newcommand{\answerIm}{ \answer
+%%% PROBLEM 1(m) ANSWER START %%%
+0
+%%% PROBLEM 1(m) ANSWER END %%%
+}
+\newcommand{\answerIn}{ \answer
+%%% PROBLEM 1(n) ANSWER START %%%
+0
+%%% PROBLEM 1(n) ANSWER END %%%
+}
+\newcommand{\answerIo}{ \answer
+%%% PROBLEM 1(o) ANSWER START %%%
+0
+%%% PROBLEM 1(o) ANSWER END %%%
+}
+\newcommand{\answerIp}{ \answer
+%%% PROBLEM 1(p) ANSWER START %%%
+0
+%%% PROBLEM 1(p) ANSWER END %%%
+}
+\newcommand{\answerIq}{ \answer
+%%% PROBLEM 1(q) ANSWER START %%%
+0
+%%% PROBLEM 1(q) ANSWER END %%%
+}
+\newcommand{\answerIr}{ \answer
+%%% PROBLEM 1(r) ANSWER START %%%
+0
+%%% PROBLEM 1(r) ANSWER END %%%
+}
+\newcommand{\answerIs}{ \answer
+%%% PROBLEM 1(s) ANSWER START %%%
+0
+%%% PROBLEM 1(s) ANSWER END %%%
+}
+\newcommand{\answerIt}{ \answer
+%%% PROBLEM 1(t) ANSWER START %%%
+0
+%%% PROBLEM 1(t) ANSWER END %%%
+}
+\newcommand{\answerIu}{ \answer
+%%% PROBLEM 1(u) ANSWER START %%%
+Your proof here.
+%%% PROBLEM 1(u) ANSWER END %%%
+}
+\newcommand{\answerIIa}{ \answer 
+%%% PROBLEM 2(a) ANSWER START %%%
+0
+%%% PROBLEM 2(a) ANSWER END %%%
+}
+\newcommand{\answerIIb}{ \answer
+%%% PROBLEM 2(b) ANSWER START %%%
+0
+%%% PROBLEM 2(b) ANSWER END %%%
+}
+\newcommand{\answerIIc}{ \answer
+%%% PROBLEM 2(c) ANSWER START %%%
+0
+%%% PROBLEM 2(c) ANSWER END %%%
+}
+\newcommand{\answerIId}{ \answer
+%%% PROBLEM 2(d) ANSWER START %%%
+0
+%%% PROBLEM 2(d) ANSWER END %%%
+}
+\newcommand{\answerIIe}{ \answer
+%%% PROBLEM 2(e) ANSWER START %%%
+0
+%%% PROBLEM 2(e) ANSWER END %%%
+}
+\newcommand{\answerIIf}{ \answer
+%%% PROBLEM 2(f) ANSWER START %%%
+0
+%%% PROBLEM 2(f) ANSWER END %%%
+}
+\newcommand{\answerIIg}{ \answer
+%%% PROBLEM 2(g) ANSWER START %%%
+0
+%%% PROBLEM 2(g) ANSWER END %%%
+}
+\newcommand{\answerIIh}{ \answer
+%%% PROBLEM 2(h) ANSWER START %%%
+0
+%%% PROBLEM 2(h) ANSWER END %%%
+}
+\newcommand{\answerIIi}{ \answer
+%%% PROBLEM 2(i) ANSWER START %%%
+0
+%%% PROBLEM 2(i) ANSWER END %%%
+}
+\newcommand{\answerIIj}{ \answer
+%%% PROBLEM 2(j) ANSWER START %%%
+method\_name
+%%% PROBLEM 2(j) ANSWER END %%%
+}
+\newcommand{\answerIIk}{ \answer
+%%% PROBLEM 2(k) ANSWER START %%%
+0
+%%% PROBLEM 2(k) ANSWER END %%%
+}
+
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8.5in}
+
+\newcommand{\theproblemsetnum}{3-2}
+\newcommand{\releasedate}{September 17, 2020}
+\newcommand{\partaduedate}{September 28}
+\newcommand{\critiqueduedate}{October 5}
+\newcommand{\tabUnit}{3ex}
+\newcommand{\tabT}{\hspace*{\tabUnit}}
+
+\begin{document}
+
+\handout{Problem Set \theproblemsetnum}{\releasedate}
+
+\textbf{Both theory and programming questions} are due {\bf \partaduedate} at
+{\bf 11:59PM}.
+%
+Please submit your solutions on Canvas, as two separate files: one image containing
+your write-up, and one zip containing your programming solutions.
+
+We will provide the solutions to the problem set after the problem set
+is due, which you will use to find any errors in the proof that you submitted.
+You will need to submit a critique of your solutions by \critiqueduedate.
+Your grade will be based on both your solutions and
+your critique of the solutions.
+
+\medskip
+
+\hrulefill
+
+\collaborators
+
+\begin{problems}
+
+\problem \points{45} \textbf{Range Queries}
+
+Microware is preparing to launch a new database product, NoSQL Server, aimed at the
+real-time analytics market. Web application analytics record information (e.g., the
+times when users visit the site, or how much does it take the server to produce a
+HTTP response), and can display the information using a Pretty Graph$^{\texttt{TM}}$,
+so that CTOs can claim that they’re using data to back their decisions.
+
+NoSQL Server databases will support a special kind of index, called a range index,
+to speed up the operations needed to build a Pretty Graph$^{\texttt{TM}}$ out of data.
+Microware has interviewed you during the fall Career Fair, and immediately hired you
+as a consultant and asked you to help the NoSQL Server team design the range index.
+
+The range index must support fast (sub-linear) insertions, to keep up with Web
+application traffic. The first step in the Pretty Graph$^{\texttt{TM}}$ algorithm is
+finding the minimum and maximum values to be plotted, to set up the graph’s
+horizontal axis. So the range index must also be able to compute the minimum and
+maximum over all keys quickly (in sub-linear time).
+
+\begin{problemparts}
+  \problempart \points{1} Given the constraints above, what data structure covered
+  in lectures so far should be used for the range index? Microware engineers need
+  to implement range indexes, so choose the simplest data struture that meets the
+  requirements.
+    \begin{enumerate}
+      \item Min-Heap
+      \item Max-Heap
+      \item Binary Search Tree (BST)
+      \item AVL Trees
+      \item B-Trees
+    \end{enumerate}
+\answerIa
+
+  \problempart \points{1} How much time will it take to insert a key in the range
+  index?
+    \begin{enumerate}
+      \item $O(1)$
+      \item $O(\log(\log N))$
+      \item $O(\log N)$
+      \item $O(\log^2 N)$
+      \item $O(\sqrt{N})$
+    \end{enumerate}
+\answerIb
+    
+  \problempart \points{1} How much time will it take to find the minimum key in
+  the range index?
+    \begin{enumerate}
+      \item $O(1)$
+      \item $O(\log(\log N))$
+      \item $O(\log N)$
+      \item $O(\log^2 N)$
+      \item $O(\sqrt{N})$
+    \end{enumerate}
+\answerIc 
+
+  \problempart \points{1} How much time will it take to find the maximum key in
+  the range index?
+    \begin{enumerate}
+      \item $O(1)$
+      \item $O(\log(\log N))$
+      \item $O(\log N)$
+      \item $O(\log^2 N)$
+      \item $O(\sqrt{N})$
+    \end{enumerate}
+\answerId
+
+\end{problemparts}
+
+The main work of the Pretty Graph$^{\texttt{TM}}$ algorithm is drawing the bars in the
+graph. A bar shows how many data points there are between two values. For example,
+in order to produce the visitor graph that is the hallmark of Google Analytics, the
+range index would record each time that someone uses the site, and a bar would count
+the visiting times between the beginning and the ending of a day. Therefore, the
+range index needs to support a fast (sub-linear time) $\texttt{COUNT}(l, h)$ query
+that returns the number of keys in the index that are between $l$ and $h$
+(formally, keys $k$ such that $l \leq k \leq h$). Note that keys are unique; if $l$
+exists in the range index, it appears exactly once.
+
+Your instinct tells you that $\texttt{COUNT}(l, h)$ can be easily implemented on top
+of a simpler query, $\texttt{RANK}(x)$, which returns the number of keys in
+the index that are smaller or equal to $x$ (informally, if the keys were listed in
+ascending order, $x$'s rank would indicate its position in the sorted array).
+
+\begin{problemparts}
+
+  \problempart \points{1} Assuming $l < h$, and both $l$ and $h$ exist in the
+  index, $\texttt{COUNT}(l, h)$ is
+    \begin{enumerate}
+      \item $\texttt{RANK}(l)-\texttt{RANK}(h)-1$
+      \item $\texttt{RANK}(l)-\texttt{RANK}(h)$
+      \item $\texttt{RANK}(l)-\texttt{RANK}(h)+1$
+      \item $\texttt{RANK}(h)-\texttt{RANK}(l)-1$
+      \item $\texttt{RANK}(h)-\texttt{RANK}(l)$
+      \item $\texttt{RANK}(h)-\texttt{RANK}(l)+1$
+      \item $\texttt{RANK}(h)+\texttt{RANK}(l)-1$
+      \item $\texttt{RANK}(h)+\texttt{RANK}(l)$
+      \item $\texttt{RANK}(h)+\texttt{RANK}(l)+1$
+    \end{enumerate}
+\answerIe
+
+  \problempart \points{1} Assuming $l < h$, and $h$ exists in the index, but $l$ does
+  not exist in the index, $\texttt{COUNT}(l, h)$ is
+  \begin{enumerate}
+      \item $\texttt{RANK}(l)-\texttt{RANK}(h)-1$
+      \item $\texttt{RANK}(l)-\texttt{RANK}(h)$
+      \item $\texttt{RANK}(l)-\texttt{RANK}(h)+1$
+      \item $\texttt{RANK}(h)-\texttt{RANK}(l)-1$
+      \item $\texttt{RANK}(h)-\texttt{RANK}(l)$
+      \item $\texttt{RANK}(h)-\texttt{RANK}(l)+1$
+      \item $\texttt{RANK}(h)+\texttt{RANK}(l)-1$
+      \item $\texttt{RANK}(h)+\texttt{RANK}(l)$
+      \item $\texttt{RANK}(h)+\texttt{RANK}(l)+1$
+    \end{enumerate}
+\answerIf
+
+  \problempart \points{1} Assuming $l < h$, and $l$ exists in the index but, $h$ does
+  not exist in the index, $\texttt{COUNT}(l, h)$ is
+    \begin{enumerate}
+      \item $\texttt{RANK}(l)-\texttt{RANK}(h)-1$
+      \item $\texttt{RANK}(l)-\texttt{RANK}(h)$
+      \item $\texttt{RANK}(l)-\texttt{RANK}(h)+1$
+      \item $\texttt{RANK}(h)-\texttt{RANK}(l)-1$
+      \item $\texttt{RANK}(h)-\texttt{RANK}(l)$
+      \item $\texttt{RANK}(h)-\texttt{RANK}(l)+1$
+      \item $\texttt{RANK}(h)+\texttt{RANK}(l)-1$
+      \item $\texttt{RANK}(h)+\texttt{RANK}(l)$
+      \item $\texttt{RANK}(h)+\texttt{RANK}(l)+1$
+    \end{enumerate}
+\answerIg
+
+  \problempart \points{1} Assuming $l < h$, and neither $l$ nor $h$ exist in the
+  index, $\texttt{COUNT}(l, h)$ is
+    \begin{enumerate}
+      \item $\texttt{RANK}(l)-\texttt{RANK}(h)-1$
+      \item $\texttt{RANK}(l)-\texttt{RANK}(h)$
+      \item $\texttt{RANK}(l)-\texttt{RANK}(h)+1$
+      \item $\texttt{RANK}(h)-\texttt{RANK}(l)-1$
+      \item $\texttt{RANK}(h)-\texttt{RANK}(l)$
+      \item $\texttt{RANK}(h)-\texttt{RANK}(l)+1$
+      \item $\texttt{RANK}(h)+\texttt{RANK}(l)-1$
+      \item $\texttt{RANK}(h)+\texttt{RANK}(l)$
+      \item $\texttt{RANK}(h)+\texttt{RANK}(l)+1$
+    \end{enumerate}
+\answerIh
+
+\end{problemparts}
+
+Now that you know how to reduce a \texttt{COUNT()} query to a constant number of
+\texttt{RANK()} queries, you want to figure out how to implement \texttt{RANK()} in
+sub-linear time. None of the tree data structures that you studied in class supports
+optimized \texttt{RANK()} out of the box, but you just remembered that tree data
+structures can respond to some queries faster if the nodes are cleverly augmented
+with some information.
+
+\begin{problemparts}
+
+  \problempart \points{1} In order to respond to \texttt{RANK()} queries in 
+  sub-linear time, each node node in the tree will be augmented with an extra field,
+  $node.\gamma$. Keep in mind that for a good augmentation, the extra information for
+  a node should be computed in $O(1)$ time, based on other properties of the node,
+  and on the extra information stored in the node’s subtree. The meaning of 
+  $node.\gamma$ is
+    \begin{enumerate}
+      \item the minimum key in the subtree rooted at $node$
+      \item the maximum key in the subtree rooted at $node$
+      \item the height of the subtree rooted at $node$
+      \item the number of nodes in the subtree rooted at $node$
+      \item the rank of $node$
+      \item the sum of the keys in the subtree rooted at $node$
+    \end{enumerate}
+\answerIi
+
+  \problempart \points{1} How many extra $bits$ of storage per node does the
+  augmentation above require?
+    \begin{enumerate}
+      \item $O(1)$
+      \item $O(\log(\log N))$
+      \item $O(\log N)$
+      \item $O(\log^2 N)$
+      \item $O(\sqrt{N})$
+    \end{enumerate}
+\answerIj
+
+\end{problemparts}
+
+The following questions refer to the tree below.
+
+\xymatrix @=1em{
+  &&&&&&& *++[o][F-]{N_1} \ar[lllld]\ar[rrrrd] &&&&&&& \\
+  &&& *++[o][F-]{N_2} \ar[lld]\ar[rrd] &&&&&&&& 
+    *++[o][F-]{N_8} \ar[lld]\ar[rrd] &&& \\
+  & *++[o][F-]{N_3} \ar[ld]\ar[rd] &&&& *++[o][F-]{N_6} \ar[ld] &&&&
+    *++[o][F-]{N_9} &&&& *++[o][F-]{N_{10}} & \\
+  *++[o][F-]{N_4} && *++[o][F-]{N_5} && *++[o][F-]{N_7} && && && && && \\
+}
+
+\begin{problemparts}
+
+  \problempart \points{1} $N_4.\gamma$ is
+    \begin{enumerate}
+      \item $0$
+      \item $1$
+      \item $2$
+      \item the key at $N_4$
+    \end{enumerate}
+\answerIk
+
+  \problempart \points{1} $N_3.\gamma$ is
+    \begin{enumerate}
+      \item $1$
+      \item $2$
+      \item $3$
+      \item the key at $N_4$
+      \item the key at $N_5$
+      \item the sum of the keys at $N_3\dots N_5$
+    \end{enumerate}
+\answerIl
+
+  \problempart \points{1} $N_2.\gamma$ is
+    \begin{enumerate}
+      \item $2$
+      \item $3$
+      \item $4$
+      \item $6$
+      \item the key at $N_4$
+      \item the key at $N_7$
+      \item they sum of the keys at $N_3\dots N_7$
+    \end{enumerate}
+\answerIm
+
+  \problempart \points{1} $N_1.\gamma$ is
+    \begin{enumerate}
+      \item $3$
+      \item $6$
+      \item $7$
+      \item $10$
+      \item the key at $N_4$
+      \item the key at $N_{10}$
+      \item the sum of the keys at $N_1\dots N_{10}$
+    \end{enumerate}
+\answerIn
+
+  \problempart \points{6} Which fo the following functions need to be modified
+  to update $\gamma$? List all that apply. If the function does not apply to
+  the data structure used to implement the range index, it does not need to be
+  modified.
+    \begin{enumerate}
+      \item \texttt{INSERT}
+      \item \texttt{DELETE}
+      \item \texttt{ROTATE-LEFT}
+      \item \texttt{ROTATE-RIGHT}
+      \item \texttt{REBALANCE}
+      \item \texttt{HEAPIFY}
+    \end{enumerate}
+\answerIo
+
+  \problempart \points{1} What is the running time of a \texttt{COUNT()}
+  implementation based on \texttt{RANK()} with the augmentations made to the
+  tree?
+    \begin{enumerate}
+      \item $O(1)$
+      \item $O(\log(\log N))$
+      \item $O(\log N)$
+      \item $O(\log^2 N)$
+      \item $O(\sqrt{N})$
+    \end{enumerate}
+\answerIp
+
+\end{problemparts}
+
+After the analytics data is plotted using Pretty Graph$^{\texttt{TM}}$, the CEO can
+hover the mouse cursor over one of the bars, and the graph will show a tooltip with
+the information represented by that bar. To support this operation, the range index
+needs to support a $\texttt{LIST}(l, h)$ operation that returns all the keys between
+l and h as quickly as possible.
+
+$\texttt{LIST}(l, h)$ cannot be sub-linear in the worst case, because 
+$\texttt{LIST}(-\infty, +\infty)$ must return all the keys in the index, which takes
+$\Omega(n)$ time. However, if \texttt{LIST} only has to return a few elements, we
+would like it to run in sub-linear time. We formalize this by stating that
+\texttt{LIST}'s running time should be $T(N) + \Theta(L)$, where $L$ is the length
+of the list of keys output by \texttt{LIST}, and $T(N)$ is sub-linear.
+
+Inspiration strikes again, and you find yourself with the following pseudocode
+for \texttt{LIST}.
+
+\begin{algorithm}[H]
+\caption{$\texttt{LIST}(tree, l, h)$}
+  $lca = \texttt{LCA}(tree, l, h)$ \\
+  $result = []$ \\
+  $\texttt{NODE-LIST}(lca, l, h, result)$ \\
+  \Return{$result$}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{$\texttt{NODE-LIST}(node, l, h, result)$}
+  \If{$node == \texttt{NIL}$}
+  {
+    \Return
+  }
+  \If{$l\leq node.key \text{ and } node.key \leq h$}
+  {
+    $\texttt{ADD-KEY}(result, node.key)$
+  }
+  \If{$node.key \geq l$}
+  {
+    $\texttt{NODE-LIST}(node.left, l, h, result)$
+  }
+  \If{$node.key \leq h$}
+  {
+    $\texttt{NODE-LIST}(node.right, l, h, result)$
+  }
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{$\texttt{LCA}(tree, l, h)$}
+  $node = tree.root$ \\
+  \While {
+    $node \neq \texttt{NIL} \textbf{ and }
+    \big(l > node.key \textbf{ or } h < node.key\big)$
+  }
+  {
+    \If{$l < node.key$}
+    {
+      $node = node.left$
+    }
+    \Else{
+      $node = node.right$
+    }
+  }
+  \Return $node$
+\end{algorithm}
+
+\begin{problemparts}
+
+  \problempart \points{1} \texttt{LCA} most likely stands for
+    \begin{enumerate}
+      \item last common ancestor
+      \item lowest common ancestor
+      \item low cost airline
+      \item life cycle assessment
+      \item logic cell array
+    \end{enumerate}
+\answerIq
+
+  \problempart \points{1} The running time of $\texttt{LCA}(l,h)$ for trees
+  used by the range index is
+    \begin{enumerate}
+      \item $O(1)$
+      \item $O(\log(\log N))$
+      \item $O(\log N)$
+      \item $O(\log^2 N)$
+      \item $O(\sqrt{N})$
+    \end{enumerate}
+\answerIr
+
+  \problempart \points{1} Assuming that $\texttt{ADD-KEY}$ runs in $O(1)$ time,
+  and that $\texttt{LIST}$ returns a list of $L$ keys, the running time of
+  $\texttt{NODE-LIST}$ call at line 3 of $\texttt{LIST}$ is
+   \begin{enumerate}
+      \item $O(1)$
+      \item $O(\log(\log N))$
+      \item $O(\log N)$
+      \item $O(\log^2 N)$
+      \item $O(\sqrt{N})$
+      \item $O(1) + O(L)$
+      \item $O(\log(\log N)) + O(L)$
+      \item $O(\log N) + O(L)$
+      \item $O(\log^2N) + O(L)$
+      \item $O(\sqrt{N}) + O(L)$
+    \end{enumerate}
+\answerIs
+
+  \problempart \points{1} Assuming that $\texttt{ADD-KEY}$ runs in $O(1)$ time,
+  and that $\texttt{LIST}$ returns a list of $L$ keys, the running time of
+  $\texttt{LIST}$ is
+    \begin{enumerate}
+      \item $O(1)$
+      \item $O(\log(\log N))$
+      \item $O(\log N)$
+      \item $O(\log^2 N)$
+      \item $O(\sqrt{N})$
+      \item $O(1) + O(L)$
+      \item $O(\log(\log N)) + O(L)$
+      \item $O(\log N) + O(L)$
+      \item $O(\log^2N) + O(L)$
+      \item $O(\sqrt{N}) + O(L)$
+    \end{enumerate}
+\answerIt
+    
+  \problempart \points{20} Prove that $\texttt{LCA}$ is correct (i.e. that if
+  $l$ and $h$ have common ancestors in the tree, it returns the lowest such
+  ancestor, and otherwise it returns $\texttt{NIL}$).
+\answerIu
+
+\end{problemparts}
+
+
+\problem \points{55} \textbf{Digital Circuit Layout}
+
+Your AMDtel internship is off to a great start! The optimized circuit simulator
+cemented your reputation as an algorithms whiz. Your manager capitalized on your
+success, and promised to deliver the Bullfield chip a few months ahead of schedule.
+Thanks to your simulator optimizations, the engineers have finished the logic-level
+design, and are currently working on laying out the gates on the chip. Unfortunately,
+the software that verifies the layout is taking too long to run on the preliminary
+Bullfield layouts, and this is making the engineers slow and unhappy. Your manager is
+confident in your abilities to speed it up, and promised that you’ll “do your magic”
+again, in “one week, two weeks tops”.
+
+A chip consists of logic gates, whose input and output terminals are connected by
+wires (very thin conductive traces on the silicon substrate). AMDtel’s high-yield
+manufacturing process only allows for horizontal or vertical wires. Wires must not
+cross each other, so that the circuit will function according to its specification.
+This constraint is checked by the software tool that you will optimize. The
+topologies required by complex circuits are accomplished by having dozens of layers
+of wires that do not touch each other, and the tool works on one layer at a time.
+
+\begin{problemparts}
+
+\problempart \points{1} Run the code under the python profiler with the command
+below, and identify the method that takes up most of the CPU time. If two
+methods have similar CPU usage times, ignore the simpler one.
+
+\texttt{python -m cProfile -s time circuit2.py < tests/10grid\_s.in}
+
+\textit{Warning:} the command above can take 15-60 minutes to complete, and
+bring the CPU usage to 100\% on one of your cores. Plan accordingly.
+
+What is the name of the method with the highest CPU usage?
+\answerIIa
+
+\problempart \points{1} How many times is the method called?
+\answerIIb
+
+\end{problemparts}
+
+The method that has the performance bottleneck is called from the 
+\texttt{CrossVerifier} class. Upon reading the class, it seems that the original
+author was planning to implement a $sweep-line$ algorithm, but couldn’t figure out
+the details, and bailed and implemented an inefficient method at the last minute.
+Fortunately, most of the infrastructure for a fast sweep-line algorithm is still
+in place. Furthermore, you notice that the source code contains a trace of the
+working sweep-line algorithm, in the \texttt{good\_trace.jsonp} file.
+
+Sweep-line algorithms are popular in computational geometry. Conceptually, such an
+algorithm sweeps a vertical line left to right over the plane containing the input
+data, and performs operations when the line “hits” points of interest in the input.
+This is implemented by generating an array containing all the points of interest, and
+then sorting them according to their position along the horizontal axis ($x$
+coordinate).
+
+Read the source for \texttt{CrossVerifier} to get a feel for how the sweep-line
+infrastructure is supposed to work, and look at the good trace in the visualizer
+that we have provided for you. To see the good trace, copy
+\texttt{good\_trace.jsonp} to \texttt{trace.jsonp}:
+
+\texttt{cp good\_trace.jsonp trace.jsonp}
+
+On Windows, use this command instead (or use a bash terminal):
+
+\texttt{copy good\_trace.jsonp trace.jsonp}
+
+Then use Google Chrome to open \texttt{visualizer/bin/visualizer.html}.
+
+The questions below refer to the fast sweep-line algorithm shown in
+\texttt{good\_trace.jsonp}, not to the slow algorithm hacked together
+in \texttt{circuit2.py}.
+
+\begin{problemparts}
+
+\problempart \points{5} The $x$ coordinates of points of interest in the input
+are (mark each option as true or false):
+\begin{enumerate}
+  \item the $x$ coordinates of the left endpoints of horizontal wires
+  \item the $x$ coordinates of the right endpoints of horizontal wires
+  \item the $x$ coordinates of the midpoints of horizontal wires
+  \item the $x$ coordinates where vertical wires cross horizontal wires
+  \item the $x$ coordinates of vertical wires
+\end{enumerate}
+\answerIIc 
+
+\problempart \points{1} When the sweep line hits the $x$ coordinate of the
+left endpoint of a horizontal wire
+\begin{enumerate}
+  \item the wire is added to the range index
+  \item the wire is removed from the range index
+  \item a range index query is performed
+  \item nothing happens
+\end{enumerate}
+\answerIId
+
+\problempart \points{1} When the sweep line hits the $x$ coordinate of the right
+endpoint of a horizontal wire
+\begin{enumerate}
+  \item the wire is added to the range index
+  \item the wire is removed from the range index
+  \item a range index query is performed
+  \item nothing happens
+\end{enumerate}
+\answerIIe
+
+\problempart \points{1} When the sweep line hits the $x$ coordinate of the midpoint
+of a horizontal wire
+\begin{enumerate}
+  \item the wire is added to the range index
+  \item the wire is removed from the range index
+  \item a range index query is performed
+  \item nothing happens
+\end{enumerate}
+\answerIIf
+
+\problempart When the sweep line hits the $x$ coordinate of a vertical wire
+\begin{enumerate}
+  \item the wire is added to the range index
+  \item the wire is removed from the range index
+  \item a range index query is performed
+  \item nothing happens
+\end{enumerate}
+\answerIIg
+
+\problempart \points{1} What is a good invariant for the sweep-line algorithm?
+\begin{enumerate}
+  \item the range index holds all of the horizontal wires to the left of the
+    sweep line
+  \item the range index holds all of the horizontal wires "cut" by the sweep line
+  \item the range index holds all of the horizontal wires to the right of the
+    sweep line
+  \item the range index holds all of the wires to the left of the sweep line
+  \item the range index holds all of the wires to the right of the sweep line
+\end{enumerate}
+\answerIIh
+
+\problempart \points{1} When a wire is added to the range index, what is its
+corresponding key?
+\begin{enumerate}
+  \item the $x$ coordinate of the wire's midpoint
+  \item the $y$ coordinate of the wire's midpoint
+  \item the segment's length
+  \item the $x$ coordinate of interest that will remove the wire from the index
+\end{enumerate}
+
+\end{problemparts}
+
+Modify \texttt{CrossVerifier} in \texttt{circuit2.py} to implement the sweep-line
+algorithm discussed above. If you maintain the current code structure, you’ll be able
+to use our visualizer to debug your implementation. To use our visualizer, first
+produce a trace:
+
+\texttt{TRACE=jsonp python circuit2.py < tests/5logo.in > trace.jsonp}
+
+On windows, run the following command instead to produce a trace:
+
+\texttt{circuit2\_jsonp.bat < tests/5logo.in > trace.jsonp}
+
+Then use Google Chrome to open \texttt{visualizer/bin/visualizer.html}.
+
+Note that there are tests provided other than \texttt{tests/5logo.in}, whose trace
+is produced above.
+
+\begin{problemparts}
+
+\problempart \points{1} Run your modified code under the python profiler again, using
+the same test as before, and identify the method that takes up the most CPU time.
+
+What is the name of the method with the highest CPU usage now? If two methods have
+similar CPU usage times, ignore the simpler one.
+\answerIIj
+
+\problempart \points{1} How many times is the method called?
+\answerIIk
+
+\problempart \points{40} Modify \texttt{circuit2.py} to implement a data structure
+that has better asymptotic running time for the operation above. Keep in mind that
+the tool has two usage scenarios:
+
+\begin{itemize}
+  \item Every time an engineer submits a change to one of the Bullhorn wire layers,
+    the tool must analyze the layer and report the number of wire crossings. In this
+    late stage of the project, the version control system will automatically reject
+    the engineer’s change if it causes the number of wire crossings to go up over the
+    previous version.
+  \item Engineers working on the wiring want to see the pairs of wires that intersect, so they know where to focus ther efforts. To activate this detailed output, generate a trace using the following command.\\
+  \texttt{TRACE=list python circuit2.py < tests/6list\_logo.in}\\
+  On Windows, run this command instead:\\
+  \texttt{circuit2\_list.bat < tests/6list\_logo.in}\\
+  Again, note that the chosen test \texttt{6list\_logo.in} can be changed. The
+  important difference between these commands and those given earlier to generate
+  traces is that \texttt{TRACE=jsonp} has been replaced with \texttt{TRACE=list}
+  (or, for Windows, that \texttt{circuit2\_json.bat} has been replaced with
+  \texttt{circuit2\_list.bat}).
+  \item Correctness can be tested exactly as it was in the previous assignment
+\end{itemize}
+
+When your code passes all tests, and runs reasonably fast (the tests should
+complete in less than 60 seconds on any reasonably recent computer), you are
+done. The only code that you need to submit is your modified \texttt{circuit2.py}.
+
+\end{problemparts}
+
+\end{problems}
+\end{document}

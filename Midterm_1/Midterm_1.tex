@@ -1,0 +1,257 @@
+%
+% 354 Homework 3-1
+%
+\documentclass[12pt,twoside]{article}
+
+\input{macros}
+\renewcommand{\name}{YOUR NAME HERE}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[ruled,lined,noend,linesnumbered]{algorithm2e}
+\SetKwIF{If}{ElseIf}{Else}{if}{}{else if}{else}{}
+\SetKwFor{For}{for}{}{}
+\SetKwInOut{IN}{\texttt{IN}}
+\SetKwInOut{OUT}{\texttt{OUT}}
+\NoCaptionOfAlgo
+
+\newcommand{\answer}{
+ \par\medskip
+ \textbf{Answer}
+}
+
+\newcommand{\answerIa}{ \answer
+%%% PROBLEM 1(a) ANSWER START %%%
+
+%%% PROBLEM 1(a) ANSWER END %%%
+}
+
+\newcommand{\answerIb}{ \answer
+%%% PROBLEM 1(b) ANSWER START %%%
+
+%%% PROBLEM 1(b) ANSWER END %%%
+}
+
+\newcommand{\answerIIa}{ \answer 
+%%% PROBLEM 2(a) ANSWER START %%%
+
+%%% PROBLEM 2(a) ANSWER END %%%
+}
+
+\newcommand{\answerIIb}{ \answer
+%%% PROBLEM 2(b) ANSWER START %%%
+
+%%% PROBLEM 2(b) ANSWER END %%%
+}
+
+\newcommand{\answerIIIa}{ \answer
+%%% PROBLEM 3(a) ANSWER START %%%
+
+%%% PROBLEM 3(a) ANSWER END %%%
+}
+
+\newcommand{\answerIIIb}{ \answer
+%%% PROBLEM 3(b) ANSWER START %%%
+
+%%% PROBLEM 3(b) ANSWER END %%%
+}
+
+\newcommand{\answerIVa}{ \answer
+%%% PROBLEM 4(a) ANSWER START %%%
+
+%%% PROBLEM 4(a) ANSWER END %%%
+}
+
+\newcommand{\answerIVb}{ \answer
+%%% PROBLEM 4(b) ANSWER START %%%
+
+%%% PROBLEM 4(b) ANSWER END %%%
+}
+
+\newcommand{\answerV}{ \answer
+%%% PROBLEM 5 ANSWER START %%%
+
+%%% PROBLEM 5 ANSWER END %%%
+}
+
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8.5in}
+
+\newcommand{\theproblemsetnum}{1}
+\newcommand{\releasedate}{September 7, 2020}
+\newcommand{\partaduedate}{September 16}
+\newcommand{\critiqueduedate}{September 23}
+\newcommand{\tabUnit}{3ex}
+\newcommand{\tabT}{\hspace*{\tabUnit}}
+
+\begin{document}
+
+\handout{Midterm \theproblemsetnum}{\releasedate}
+
+This midterm is due {\bf \partaduedate} at
+{\bf 11:59PM}. The suggested lengths of explanations are exactly that: suggestions.
+You do not need the exact specified number of sentences. These suggestions
+exist solely to provide an idea for the expected level of detail.
+
+\medskip
+
+\hrulefill
+
+\begin{problems}
+
+\problem \points{20} \textbf{Correctness}
+
+Determine whether each of the following algorithms is fully correct,
+and prove that your answer is correct.
+
+\begin{problemparts}
+  
+  \problempart \points{10}
+
+  \begin{algorithm}[H]
+  \caption{$\texttt{A}(x)$}
+  \IN{$x \in \mathbb{R}$, $x \geq 1$}
+  $x' = x$\\
+  $p = 0$\\
+  \While{$x' > 1$}{
+    $p = p + 1$\\
+    $x' = x' / 2$\\
+  }
+  \Return{$p$}\\
+  \OUT{$p = \log_{2}{x}$}
+  \end{algorithm}
+  
+  \answerIa
+
+  \problempart \points{10}
+
+  \begin{algorithm}[H]
+  \caption{$\texttt{B}(x)$}
+  \IN{$x \in \mathbb{R}$, $x \geq 1$}
+  \While{$x > 1$}{
+    $x = x / 2$\\
+  }
+  \If{$x == 1$}{
+    \Return{\texttt{true}}
+  }
+  \Else{
+    \Return{\texttt{false}}
+  }
+  \OUT{\texttt{true} if $x = 2^n$ for some integer $n$ (initially);
+  	\texttt{false} otherwise.
+  }
+  \end{algorithm}
+
+  \answerIb
+    
+  
+\end{problemparts}
+
+%\end{problemparts}
+
+
+\problem \points{20} \textbf{Data Structure Selection}
+
+\begin{problemparts}
+
+  \problempart \points{10}
+
+  Imagine you are implementing a graph search mechanism; you want to find the
+  shortest path from some $source$ node to a $target$ node. You decide to use
+  \texttt{Dijkstra's Algorithm}. This algorithm requires a \texttt{PriorityQueue}.
+  The \texttt{PriorityQueue} must be able to do the following in $O(\log{n})$ time
+  (where $n$ is the number of elements):
+
+    \begin{itemize}
+      \item $\texttt{insert}(key, value)$
+      \item $\texttt{extract\_min}$
+      \item $\texttt{decrease\_key}(old\_key, value, new\_key)$
+    \end{itemize}
+
+  What data structure should be used to implement the \texttt{PriorityQueue} ADT
+  in this case? Justify your answer.
+
+  \answerIIa
+
+  \problempart \points{10}
+
+  You've joined the development team for an indie game called {\bf Amidst Us}.
+  Each player can see how many games they've won on the home screen; this number
+  is calculated as follows:
+
+  \begin{itemize}
+    \item Each time a player wins a game, their username is added to the end
+    of a list.
+    \item Each time a player enters the home screen (so their number of wins
+    needs to be calculated), this list of usernames is traversed and the number
+    of occurrences of the player's username is counted.
+  \end{itemize}
+
+  Recently, the number of players playing {\bf Amidst Us} has skyrocketed after
+  several influential streamers picked it up. Users are now complaining that the
+  home screen takes several minutes to load (and the problem is getting worse,
+  fast).
+
+  You're tasked with fixing the problem. You've determined that the problem is
+  caused by the calculation discussed above. What structure should you use to
+  store and easily increment the number of wins associated with each username
+  in order to speed up this process? Justify your answer.
+
+  \answerIIb
+
+\end{problemparts}
+
+\problem \points{20} \textbf{Sorting Lower Bounds}
+
+\begin{problemparts}
+
+	\problempart \label{nlogn} \points{10}
+	Explain briefly (2--3 sentences) how we know that sorting must take
+	$\Omega(n\log n)$time in the comparison model.
+
+	\answerIIIa
+
+	\problempart \points{10}
+	\texttt{RadixSort} can sort integers of bounded size in linear time.
+	Does this contradict the result discussed in the previous part? Why or why not?
+
+	\answerIIIb
+
+\end{problemparts}
+
+\problem \points{20} \textbf{Dictionary Management}
+
+Determine whether each of the following dictionary resizing schemes will maintain
+$O(1)$ insert and delete amortized complexity. The costs of
+maintaining dictionary size should be included in the costs of the operations.
+Justify each answer briefly. In each part, $n$ is the number of elements and $m$
+is the size of the dictionary.
+
+\begin{problemparts}
+
+	\problempart \points{10} Every time an element is inserted or deleted, resize
+	the dictionary so that $m = 2n$.
+
+	\answerIVa
+
+	\problempart \points{10} After inserting, if $n > \frac{m}{2}$, double
+	the size of the dictionary. After deleting, if $n \leq \frac{m}{4}$, halve
+	the size of the dictionary.
+
+	\answerIVb
+
+\end{problemparts}
+
+\problem \points{20} \textbf{Optimization Overview}
+
+
+Briefly describe (in 3--4 sentences) the series of steps taken to optimize (or
+attempt to optimize) a slow implementation. Where do you start? How do you proceed?
+
+\answerV
+
+\end{problems}
+\end{document}

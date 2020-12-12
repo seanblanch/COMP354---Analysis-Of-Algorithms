@@ -1,0 +1,197 @@
+%
+% 354 Exam 2
+%
+\documentclass[12pt,twoside]{article}
+
+\input{macros}
+\renewcommand{\name}{YOUR NAME HERE}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[ruled,lined,noend,linesnumbered]{algorithm2e}
+\SetKwIF{If}{ElseIf}{Else}{if}{}{else if}{else}{}
+\SetKwFor{For}{for}{}{}
+\SetKwInOut{IN}{\texttt{IN}}
+\SetKwInOut{OUT}{\texttt{OUT}}
+\NoCaptionOfAlgo
+
+\newcommand{\answer}{
+ \par\medskip
+ \textbf{Answer}
+}
+
+\newcommand{\answerI}{ \answer
+%%% PROBLEM 1 ANSWER START %%%
+
+%%% PROBLEM 1 ANSWER END %%%
+}
+
+\newcommand{\answerIIa}{ \answer
+%%% PROBLEM 2(a) ANSWER START %%%
+
+%%% PROBLEM 2(a) ANSWER END %%%
+}
+
+\newcommand{\answerIIb}{ \answer
+%%% PROBLEM 2(b) ANSWER START %%%
+
+%%% PROBLEM 2(b) ANSWER END %%%
+}
+
+\newcommand{\answerIIc}{ \answer
+%%% PROBLEM 2(c) ANSWER START %%%
+
+%%% PROBLEM 2(c) ANSWER END %%%
+}
+
+\newcommand{\answerIId}{ \answer
+%%% PROBLEM 2(d) ANSWER START %%%
+
+%%% PROBLEM 2(d) ANSWER END %%%
+}
+
+\newcommand{\answerIIIa}{ \answer
+%%% PROBLEM 3(a) ANSWER START %%%
+
+%%% PROBLEM 3(a) ANSWER END %%%
+}
+
+\newcommand{\answerIIIb}{ \answer
+%%% PROBLEM 3(b) ANSWER START %%%
+
+%%% PROBLEM 3(b) ANSWER END %%%
+}
+
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8.5in}
+
+\newcommand{\theproblemsetnum}{2}
+\newcommand{\releasedate}{November 11, 2020}
+\newcommand{\partaduedate}{November 14}
+\newcommand{\tabUnit}{3ex}
+\newcommand{\tabT}{\hspace*{\tabUnit}}
+
+\begin{document}
+
+\handout{Midterm \theproblemsetnum}{\releasedate}
+
+This midterm is due {\bf \partaduedate} at
+{\bf 11:59PM}. The suggested lengths of explanations are exactly that: suggestions.
+You do not need the exact specified number of sentences. These suggestions
+exist solely to provide an idea for the expected level of detail.
+
+\medskip
+
+\hrulefill
+
+\begin{problems}
+
+\problem \points{20} \textbf{Dependencies}
+
+CSUCI has contracted you to create a utility which:
+
+\begin{itemize}
+\item takes as input a list of classes
+\item has access to a list of prerequisites for each class
+\item outputs an order in which the classes can be taken
+  such no class is taken until after its prerequisites
+\end{itemize}
+
+How should this utility be implemented?
+
+\answerI
+
+
+\problem \points{40} \textbf{Shortest Paths}
+
+For each of the following situations, describe a  process
+(or name an algorithm) that could be used to efficiently 
+find a shortest path from a node to a target.
+Briefly justify your answer.
+
+\begin{problemparts}
+  
+  \problempart \points{10}
+  Each vertex is a location, and each edge is a road. The weight
+  of each edge is the length of the stretch of road connecting
+  the two locations corresponding to the edge's vertices.
+  
+  \answerIIa
+
+  \problempart \points{10}
+  Each vertex is a level in the game Star Fox 64. The graph is
+  directed and acyclic; the weight of each edge is a non-negative
+  estimation of the difficulty of the level represented by the 
+  vertex that the edge leads to.
+
+  \answerIIb
+
+  \problempart \points{10}
+  Each vertex represents a location, and each edge represents a
+  path between two locations. The edge weights denote the
+  approximate amount of food expended during the journey from one
+  location to another. These edge weights account for the estimated
+  availability of food along the paths; in bountiful areas, edge
+  weights can be negative.
+
+  \answerIIc
+
+  \problempart \points{10}
+  You want to find a shortest path containing at most twelve edges.
+
+  \answerIId
+    
+  
+\end{problemparts}
+
+\problem \points{40} \textbf{Dynamic Programming}
+
+$C(n, k)$, often expressed as ``$n$ choose $k$'', is the number of
+  unique subsets of size $k$ of a set of size $n$ (for $0\leq k \leq n$).
+  $C(n, k)$ can be defined as follows:
+
+  $$
+    C(n, k) = \
+    \begin{cases}
+      C(n-1, k-1) + C(n-1, k) & \text{ if } n > k \\
+      1 & \text{ if } n = k \text{ or } k = 0
+    \end{cases}
+  $$
+
+  $C(n, k)$ can therefore be calculated with a naive recursive algorithm
+  as follows:
+
+  \begin{algorithm}[H]
+  \caption{$\texttt{C}(n, k)$}
+  \IN{$n,k \in {0, 1, 2, ...}$, $n \geq k$}
+  \If{$k == 0$ or $n == k$}{
+    \Return{$1$}
+  }
+  \Else{
+    \Return{$\texttt{C}(n-1, k-1) + \texttt{C}(n-1, k)$}
+  }
+  \OUT{\texttt{true} if $x = 2^n$ for some integer $n$ (initially);
+    \texttt{false} otherwise.
+  }
+  \end{algorithm}
+
+  \begin{problemparts}
+
+  \problempart \points{20}
+  How could you improve this recursive algorithm? (Improve the provided
+  algorithm; do not list the closed-form formula for $C(n, k)$).
+
+  \answerIIIa
+
+  \problempart \points{20}
+  What are the subproblems? What is their topological order?
+
+  \answerIIIb
+
+  \end{problemparts}
+
+\end{problems}
+\end{document}
