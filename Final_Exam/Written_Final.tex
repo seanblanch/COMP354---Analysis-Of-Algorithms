@@ -1,0 +1,181 @@
+%
+% 354 Final Exam (Written Portion)
+%
+\documentclass[12pt,twoside]{article}
+
+\input{macros}
+\renewcommand{\name}{YOUR NAME HERE}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[ruled,lined,noend,linesnumbered]{algorithm2e}
+\SetKwIF{If}{ElseIf}{Else}{if}{}{else if}{else}{}
+\SetKwFor{For}{for}{}{}
+\SetKwInOut{IN}{\texttt{IN}}
+\SetKwInOut{OUT}{\texttt{OUT}}
+\NoCaptionOfAlgo
+
+\newcommand{\answer}{
+ \par\medskip
+ \textbf{Answer}
+}
+
+\newcommand{\answerI}{ \answer
+%%% PROBLEM 1 ANSWER START %%%
+
+%%% PROBLEM 1 ANSWER END %%%
+}
+
+\newcommand{\answerII}{ \answer
+%%% PROBLEM 2 ANSWER START %%%
+
+%%% PROBLEM 2 ANSWER END %%%
+}
+
+\newcommand{\answerIII}{ \answer
+%%% PROBLEM 3 ANSWER START %%%
+
+%%% PROBLEM 3 ANSWER END %%%
+}
+
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8.5in}
+
+\newcommand{\theproblemsetnum}{3}
+\newcommand{\releasedate}{Dec 8, 2020}
+\newcommand{\partaduedate}{Thursday, Dec 10}
+\newcommand{\tabUnit}{3ex}
+\newcommand{\tabT}{\hspace*{\tabUnit}}
+
+\begin{document}
+
+\handout{Final Exam}{\releasedate}
+
+This final is due {\bf \partaduedate} at {\bf 11:59PM}. Note that you 
+must take an interview exam in addition to this written exam; failure to
+interview will result in a failing grade on the final exam, of which this
+is only half.
+
+\medskip
+
+\hrulefill
+
+\begin{problems}
+
+\problem \points{15} \textbf{Proof of Correctness}
+
+Consider a problem in which you have a list $J$ of jobs,
+each of which takes the same amount of time to complete. You need to
+schedule these jobs in array $S$, indexed from $0$ to $n$. Each
+job occupies a single index in the array, because they each take the
+same amount of time to complete. Each job $j \in J$ has:
+
+\begin{itemize}
+  \item {\bf deadline} $j.deadline$ from $0$ to $n$, denoting the
+    latest index in $S$ at which it can be scheduled.
+  \item {\bf profit} $j.profit$, denoting the profit or gain
+    from completing job $j$.
+\end{itemize}
+
+The goal is to maximize the sum of profits of the jobs scheduled in
+$S$. $\abs{J}$ can be greater than $\abs{S}$, so it might not be
+possible to schedule all jobs. There is no penalty for leaving
+a job undone.
+
+Consider the following algorithm:
+
+\begin{algorithm}[H]
+  \caption{Job Scheduling}
+  \IN{List $J$ of jobs, max index $n$}
+  $S \leftarrow \text{an array indexed $0$ to $n$, with $null$ at each index}$\\
+  Sort $J$ in non-increasing order of profits\\
+  \For{$i$ from $0$ to $n$}{
+    Find the largest $t$ such that $S[t] = null$ and $t\leq J[i].deadline$
+      (if one exists) \\
+    \If{an index $t$ was found}{
+      $S[t] \leftarrow J[i]$
+    }
+  }
+  \OUT{$S$ maximizes the profit of scheduled jobs}
+\end{algorithm}
+
+Note that $\leftarrow$ is used to denote assignment; $x\leftarrow y$ means that
+$x$ is assigned the value of $y$.
+
+Prove that the algorithm is correct.
+
+HINT: A schedule $S$ is {\bf promising} if it can be extended to an optimal
+schedule by scheduling jobs that have not yet been considered. If $S$ is
+promising after all jobs have been considered, then $S$ is an optimal
+schedule.
+
+\answerI
+
+\newpage
+
+\problem \points{15} \textbf{Time Complexity}
+
+Derive the time complexity of the following algorithm. Show your work.
+
+\begin{algorithm}[H]
+  \caption{MULT}
+  \IN{$x$ and $y$, two $n$-bit binary numbers}
+  \If{$b = 1$}{
+    \If{$x = 1 \wedge y = 1$}{
+      \Return $1$
+    }
+    \Else {
+      \Return $0$
+    }
+  }
+  $(x_1, x_0) \leftarrow (\text{first } \lceil n/2 \rceil \text{ bits }, 
+    \text{ last } \lfloor n/2 \rfloor \text{ bits })$ of $x$ \\
+  $(y_1, y_0) \leftarrow (\text{first } \lceil n/2 \rceil \text{ bits }, 
+    \text{ last } \lfloor n/2 \rfloor \text{ bits })$ of $y$ \\
+  $z_1 \leftarrow \textsc{MULT}(x_1 + x_0, y_1 + y_0)$ \\
+  $z_2 \leftarrow \textsc{MULT}(x_1, y_1)$ \\
+  $z_3 \leftarrow \textsc{MULT}(x_0, y_0)$ \\
+  \Return $z_2 \cdot 2^n + (z_1 - z_2 - z_3) \cdot 2^{\lceil n/2 \rceil}
+     + z_3$ \\
+  \OUT{The product of $x$ and $y$}
+\end{algorithm}
+
+Some details:
+\begin{itemize}
+  \item All additions and subtractions take $O(n)$ time.
+  \item In the final return line, the multiplications by $2^{\text{some power}}$
+    are actually bit shifts, and take $O(n)$ time.
+  \item The base case takes $O(1)$ time.
+\end{itemize}
+
+\answerII
+
+\newpage
+
+\problem \points{20} \textbf{Algorithmic Design}
+
+Given a sequence $R = \{r_1, r_2, ..., r_n\}$ of real numbers, let $S_{ij}$ denote
+the sum $r_i + r_{i+1} + ... + r_{j-1} + r_j$; in other words, $S_{ij}$ is the sum
+of all elements in $R$ from index $i$ to index $j$.
+
+Write an algorithm which takes a sequence of real numbers $R$ as an input and
+efficienltly finds a maximum sum $S_{ij}$.
+
+For instance, given the sequence $R = \{ 1, -2, 1, 2, 4, -9, 6 \}$, your algorithm
+should output the number $7$, which results from adding $1$, $2$ and $4$; this is the
+largest sum which can be acquired by adding consecutive elements of $R$.
+
+Note that while this is easily doable on $O(n^2)$ time by simply finding the sum
+of every consecutive subsequence, it is doable in $O(n)$ time if the subproblems
+are chosen more carefully.
+
+Your pseudocode should be concisely and clearly written; convoluted, messy, or
+unnecessarily complex solutions will lose points.
+
+\answerIII
+
+\end{problems}
+\end{document}
